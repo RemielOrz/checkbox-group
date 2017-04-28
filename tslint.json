@@ -1,0 +1,39 @@
+{
+/*
+   * Possible values:
+   * - the name of a built-in config
+   * - the name of an NPM module which has a "main" file that exports a config object
+   * - a relative path to a JSON file
+   */
+  "extends": ["tslint:latest", "tslint-react"],
+  "rules": {
+    /*
+     * Any rules specified here will override those from the base config we are extending
+     */
+    "no-constructor-vars": true,
+    // import 不要强制按字母排序
+    "ordered-imports": false,
+    // js 使用单引号, jsx 使用双引号
+    "quotemark": [true, "single", "jsx-double"],
+    // 可以允许特殊情况使用 require, 比如 css modules
+    "no-var-requires": false,
+    // 不需要前缀
+    "interface-name": [true, "never-prefix"],
+    // member-access
+    "member-access": [false, "check-accessor", "check-constructor"],
+    // 不强制按字母顺序, 在一些需要覆盖对象地方不适用
+    "object-literal-sort-keys": false,
+    // 不强制所有 function 使用箭头函数
+    "only-arrow-functions": [false, "allow-declarations"],
+    // 不强制 object 最后一个一定要加逗号
+    "trailing-comma": false,
+    // 不强制一定不能使用字符串访问对象，webapi 有这需求
+    "no-string-literal": false
+  },
+  "rulesDirectory": [
+    /*
+     * A list of relative or absolute paths to directories that contain custom rules.
+     * See the Custom Rules documentation below for more details.
+     */
+  ]
+}
